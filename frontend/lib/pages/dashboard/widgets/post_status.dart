@@ -7,7 +7,6 @@ import 'package:frontend/components/responsive.dart';
 import 'package:frontend/services/auth_service.dart';
 import 'package:http/browser_client.dart';
 
-
 class PostStatus extends StatefulWidget {
   const PostStatus({super.key});
 
@@ -126,6 +125,7 @@ class _PostStatusState extends State<PostStatus> {
       color: isOnline ? const Color(0xCC28C76F) : const Color(0xCCC72828),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+        width: double.infinity, // Ensures full width
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -149,6 +149,7 @@ class _PostStatusState extends State<PostStatus> {
             const SizedBox(height: 4),
             Text(
               posData['status_pos'],
+              textAlign: TextAlign.center, // Added center alignment
               style: TextStyle(
                 color: Colors.white,
                 fontSize: Responsive.getFontSize(
@@ -163,6 +164,7 @@ class _PostStatusState extends State<PostStatus> {
             const SizedBox(height: 4),
             Text(
               '${posData['total_transaksi']} Trx',
+              textAlign: TextAlign.center, // Added center alignment
               style: TextStyle(
                 color: Colors.white,
                 fontSize: Responsive.getFontSize(
@@ -208,10 +210,11 @@ class _PostStatusState extends State<PostStatus> {
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               title,
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Montserrat',
                 color: Colors.white,
@@ -223,6 +226,7 @@ class _PostStatusState extends State<PostStatus> {
             const SizedBox(height: 4),
             Text(
               'TRANSAKSI $transactionSum',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Montserrat',
                 color: Colors.white,
@@ -234,6 +238,7 @@ class _PostStatusState extends State<PostStatus> {
             const SizedBox(height: 4),
             Text(
               '$count Pos',
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Montserrat',
                 color: Colors.white,

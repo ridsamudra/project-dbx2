@@ -43,7 +43,11 @@ class _CombinedWidgetDetailsState extends State<CombinedWidgetDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Navbar(title: 'Pendapatan Detail - ${widget.location}'),
+      // appBar: Navbar(title: 'Pendapatan Detail - ${widget.location}'),
+      appBar: Navbar(
+        title: 'Pendapatan Detail - ${widget.location}',
+      ),
+
       drawer: const Sidebar(),
       body: Card(
         margin: Responsive.getPadding(
